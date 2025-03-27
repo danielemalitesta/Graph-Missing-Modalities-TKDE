@@ -12,7 +12,7 @@ hyperparams = ParameterGrid({
     "--percentage": [10, 30, 50, 70, 90]
 })
 
-bash = ''
+bash = "#!/bin/bash\n"
 
 for hyp in hyperparams:
     bash += (f"CUBLAS_WORKSPACE_CONFIG=:16:8 python impute_autoencoder_percentages.py "

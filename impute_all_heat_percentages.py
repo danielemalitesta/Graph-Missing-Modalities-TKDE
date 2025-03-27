@@ -18,7 +18,7 @@ hyperparams = ParameterGrid({
 bash = "#!/bin/bash\n"
 
 for hyp in hyperparams:
-    bash += (f"python impute_percentages.py "
+    bash += (f"CUBLAS_WORKSPACE_CONFIG=:16:8 python impute_percentages.py "
              f"--data {args.data} "
              f"--gpu {args.gpu_id} "
              f"--layers {hyp['--layers']} "
