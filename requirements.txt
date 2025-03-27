@@ -1,0 +1,10 @@
+Cython
+hyperopt==0.2.5
+numpy
+tqdm
+scipy
+pandas
+Pillow
+PyYAML
+scikit_learn
+Pyarrow
