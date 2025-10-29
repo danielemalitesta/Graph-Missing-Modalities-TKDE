@@ -181,3 +181,39 @@ And then, you will run:
 ```sh
 python run_multimodal_percentages.py --percentage <percentage> [all arguments from run_multimodal.py]
 ```
+
+## Other frameworks
+
+In this revised version, you can also run multimodal imputation methods for other popular frameworks other than Elliot.
+
+### MMRec
+The code is a modified version of the original MMRec repository (https://github.com/enoche/MMRec).
+
+To begin with, run:
+
+```sh
+python create_dataset.py --data <dataset_name> 
+```
+to transform the Elliot-like dataset into a format compatible for MMRec.
+
+Then, you can run any experiment (you need to impute modalities with the code above first):
+
+```sh
+python run_MMRec.py --data <dataset_name> \
+--model <model_name> \
+--layers <num_layers_for_graph_imputation> \
+--method <imputation_method> \
+--alpha <parameter_for_pers_page_rank> \
+--time <parameter_for_heat> \
+--top_k <parameter_for_graph_imputation> \ 
+```
+
+### MMSSL
+MMSSL is not included in MMRec, thus we use the original code (https://github.com/HKUDS/MMSSL).
+
+Similarly to MMRec, you first need to create the dataset in a compatible format (you will run ```create_dataset.py```), and then you can run the experiments (you will use ```main.py```).
+
+### DiffMM
+Also DiffMM is not included in MMRec, thus we use the original code (https://github.com/HKUDS/DiffMM).
+
+Similarly to MMRec, you first need to create the dataset in a compatible format (you will run ```CreateDataset.py```), and then you can run the experiments (you will use ```Main.py```).
